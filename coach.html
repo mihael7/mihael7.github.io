@@ -33,42 +33,62 @@
 <body>
 
 	<script>
-// Проверка на мобильное устройство
-function isMobile() {
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-}
-
-// Обработчик клика для кнопки
-document.querySelector('.mbr-section-btn .item-btn').addEventListener('click', function(e) {
-  if (!isMobile()) {
-    e.preventDefault();
-    showQR();
+// Ожидаем полной загрузки DOM
+document.addEventListener('DOMContentLoaded', function() {
+  // Уточненный селектор кнопки
+  const downloadBtn = document.querySelector('div.mbr-section-btn a.item-btn[href*="install.html"]');
+  
+  if (!downloadBtn) {
+    console.error('Кнопка не найдена! Проверьте селектор');
+    return;
   }
-});
 
-// Показать QR-код
-function showQR() {
-  const overlay = document.createElement('div');
-  overlay.className = 'qr-overlay';
-  
-  const qrContainer = document.createElement('div');
-  qrContainer.className = 'qr-container';
-  
-  const qrImage = document.createElement('img');
-  qrImage.src = 'qr.png';
-  qrImage.alt = 'QR Code';
-  
-  qrContainer.appendChild(qrImage);
-  overlay.appendChild(qrContainer);
-  document.body.appendChild(overlay);
+  // Проверка на мобильное устройство (обновленная версия)
+  function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }
 
-  // Закрытие по клику вне QR-кода
-  overlay.addEventListener('click', function(event) {
-    if (event.target === overlay) {
-      document.body.removeChild(overlay);
+  // Обработчик клика
+  downloadBtn.addEventListener('click', function(e) {
+    if (!isMobile()) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      showQR();
+      return false;
     }
   });
-}
+
+  // Функция показа QR-кода
+  function showQR() {
+    const overlay = document.createElement('div');
+    overlay.className = 'qr-overlay';
+    
+    const qrContainer = document.createElement('div');
+    qrContainer.className = 'qr-container';
+    qrContainer.innerHTML = `
+      <img src="qr.png" alt="QR Code" class="qr-image">
+      <div class="qr-hint">Отсканируйте QR-код<br>для перехода на мобильную версию</div>
+    `;
+    
+    overlay.appendChild(qrContainer);
+    document.body.appendChild(overlay);
+
+    // Закрытие по клику вне области
+    overlay.addEventListener('click', function(event) {
+      if (event.target === overlay) {
+        document.body.removeChild(overlay);
+      }
+    });
+
+    // Закрытие по ESC
+    document.addEventListener('keydown', function escClose(e) {
+      if (e.key === 'Escape') {
+        document.body.removeChild(overlay);
+        document.removeEventListener('keydown', escClose);
+      }
+    });
+  }
+});
 </script>
 
 <style>
@@ -78,25 +98,51 @@ function showQR() {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
-  cursor: pointer;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-out;
 }
 
 .qr-container {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  cursor: auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  max-width: 90%;
 }
 
-.qr-container img {
-  max-width: 300px;
-  height: auto;
+.qr-image {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto 15px;
   display: block;
+}
+
+.qr-hint {
+  font-family: Arial, sans-serif;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 480px) {
+  .qr-container {
+    padding: 15px;
+  }
+  
+  .qr-image {
+    width: 200px;
+    height: 200px;
+  }
 }
 </style>
 
