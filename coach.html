@@ -33,29 +33,35 @@
 <body>
 
 	<script>
-// Ожидаем полной загрузки DOM
 document.addEventListener('DOMContentLoaded', function() {
-  // Уточненный селектор кнопки
-  const downloadBtn = document.querySelector('div.mbr-section-btn a.item-btn[href*="install.html"]');
-  
-  if (!downloadBtn) {
-    console.error('Кнопка не найдена! Проверьте селектор');
+  // Селектор для обеих кнопок
+  const buttons = document.querySelectorAll(
+    'div.mbr-section-btn a.item-btn[href*="install.html"], ' +
+    'a.btn-primary[href*="install.html"]'
+  );
+
+  if (!buttons.length) {
+    console.error('Кнопки не найдены!');
     return;
   }
 
-  // Проверка на мобильное устройство (обновленная версия)
   function isMobile() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   }
 
-  // Обработчик клика
-  downloadBtn.addEventListener('click', function(e) {
+  // Общая функция обработки клика
+  function handleDownloadClick(e) {
     if (!isMobile()) {
       e.preventDefault();
-      e.stopImmediatePropagation();
+      e.stopPropagation();
       showQR();
       return false;
     }
+  }
+
+  // Добавляем обработчики для всех кнопок
+  buttons.forEach(btn => {
+    btn.addEventListener('click', handleDownloadClick);
   });
 
   // Функция показа QR-кода
