@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Установка приложения 1Спорт - плавание</title>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(91530578, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/91530578" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+</head>
+<body>
+
+<script>
+    // Function to check if the user is on an Android device
+    function isAndroid() {
+        return /Android/i.test(navigator.userAgent);
+    }
+
+    // Function to check if the user is on an Apple device (iPhone or iPad)
+    function isApple() {
+        return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
+    // Redirect based on the user's device
+    function redirectToStore() {
+        if (isAndroid()) {
+            // Redirect to Google Play
+            window.location.href = 'https://play.google.com/store/apps/details?id=com.e1c.mobile.sport&listing=swimming';
+        } else if (isApple()) {
+            // Redirect to App Store
+            window.location.href = 'https://apps.apple.com/ru/app/id1673404704?ppid=99d29d1a-c5d0-4058-862f-6da69ba0e3e8';
+        } else {
+            // Redirect to a default page or handle other devices
+            window.location.href = 'https://1sport.ru';
+        }
+    }
+
+    // Call the redirect function when the page loads
+    window.onload = redirectToStore;
+</script>
+
+</body>
+</html>
