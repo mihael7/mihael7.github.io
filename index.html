@@ -26,13 +26,13 @@
         <!-- fav and icons for Mobile
         ======================================================================== -->
         <link rel="shortcut icon" href="assets/images/icons/favicon.ico">
-		<link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon-16x16.png">
-		<link rel="manifest" href="assets/images/icons/site.webmanifest">
-		<link rel="mask-icon" href="assets/images/icons/safari-pinned-tab.svg" color="#5bbad5">
-		<meta name="msapplication-TileColor" content="#da532c">
-		<meta name="theme-color" content="#ffffff">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon-16x16.png">
+        <link rel="manifest" href="assets/images/icons/site.webmanifest">
+        <link rel="mask-icon" href="assets/images/icons/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
 
 
         <!-- Google Fonts
@@ -47,7 +47,7 @@
         <link rel="stylesheet" href="assets/js/plugins/swiper/css/swiper.css">
 
         <link rel="stylesheet" href="assets/css/style.css">
-		<link id="changeable-colors" rel="stylesheet" href="assets/css/css/red.css">
+        <link id="changeable-colors" rel="stylesheet" href="assets/css/css/red.css">
         <link rel="stylesheet" href="assets/css/responsive.css">
 
 
@@ -78,7 +78,7 @@
     ============================================================================ -->
     <body data-target=".header-menu-container" data-offset="61" id="main">
 
-		<!-- UP Button
+        <!-- UP Button
         ======================================================================== -->
         <div id="up-button"><a href="#" title="To Top"><i class="fa fa-angle-up"></i></a></div>
 
@@ -173,17 +173,20 @@
             ==================================================================== -->
             <div class="hero-section white-section section-no-padding-bottom">
                 <!-- Section Container -->
-                <div class="section-container">
+                <div class="section-container" style="position: relative; z-index: 10; overflow: hidden;">
 
 
-                    <!-- Background Image Block -->
-                    <div class="background-image-block parallax-effect lpbuilder-background">
-                        <img src="assets/images/hero/hero-012.jpg" alt="Parallax Background Image" style="top: 0px; transform: translate(-50%, 0px);">
-                    </div><!-- /End Background Image Block -->
+                    <!-- Background Video Block -->
+                    <div class="background-video-block" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 1;">
+                        <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+                            <source src="background.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.15); z-index: 2;"></div>
+                    </div><!-- /End Background Video Block -->
 
 
                     <!-- container -->
-                    <div class="container">
+                    <div class="container" style="position: relative; z-index: 3;">
                         <!-- row -->
                         <div class="row">
 
@@ -191,13 +194,13 @@
                             <!-- Title Block -->
                             <div class="col-lg-10 col-lg-offset-1 col-md-12 title-block">
                                 <!-- Title Block Container -->
-                                <div class="title-block-container text-center">
+                                <div class="title-block-container text-center" style="position: relative; z-index: 5;">
 
                                     <!-- Title -->
-                                    <h1 class="sm-heading">1Спорт - программы тренировок</h1>
+                                    <h1 class="sm-heading" style="color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.7);">1Спорт - программы тренировок</h1>
 
                                     <!-- Description -->
-                                    <p>От профессиональных тренеров и звезд спорта.</p>
+                                    <p style="color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.7);">От профессиональных тренеров и звезд спорта.</p>
 
                                     <!-- Line Separator -->
                                     <div class="line-separator"></div>
@@ -361,7 +364,7 @@
                                     <!-- Content Block -->
                                     <div class="col-md-12 content-block">
                                         <!-- Content Block Container -->
-                                        <div class="content-block-container" style="">
+                                        <div class="content-block-container">
 
                                             <!-- Description -->
                                             <p align="justify">В 1Спорт есть программы тренировок, составленные профессиональными тренерами, спортсменами и звездами спорта. Лучшие практики обучения теперь в одном сервисе, в одном месте на одной волне с Вами.</p>
@@ -533,7 +536,7 @@
                                     <!-- Content Block -->
                                     <div class="col-md-12 content-block">
                                         <!-- Content Block Container -->
-                                        <div class="content-block-container" style="">
+                                        <div class="content-block-container">
 
                                             <!-- Description -->
                                             <p>Приложение 1Спорт доступно как для мобильных платформ iOS и Android, так и через браузер.</p>
@@ -545,7 +548,7 @@
                                     <!-- Content Block -->
                                     <div class="col-md-12 content-block content-block-style-3">
                                         <!-- Content Block Container -->
-                                        <div class="content-block-container" style="">
+                                        <div class="content-block-container">
 
                                             <!-- Icon -->
                                             <i class="fa circle-icon-block circle-icon-block-lg fa-mobile" style="color: rgb(231, 76, 60); background-color: rgb(255, 255, 255); font-size: 22px;" src="assets/images/uploads/download-buttons-003.jpg" id="ui-id-7"></i>
@@ -563,7 +566,7 @@
                                     <!-- Content Block -->
                                     <div class="col-md-12 content-block content-block-style-3">
                                         <!-- Content Block Container -->
-                                        <div class="content-block-container" style="">
+                                        <div class="content-block-container">
 
                                             <!-- Icon -->
                                             <i class="fa circle-icon-block circle-icon-block-lg fa-globe" style="color: rgb(231, 76, 60); background-color: rgb(255, 255, 255); font-size: 22px;" src="images/uploads/download-buttons-003.jpg" id="ui-id-8"></i>
@@ -622,7 +625,7 @@
                             <!-- Title Block -->
                             <div class="col-lg-10 col-lg-offset-1 col-md-12 title-block">
                                 <!-- Title Block Container -->
-                                <div class="title-block-container text-center">
+                                <div class="title-block-container text-center" style="position: relative; z-index: 5;">
 
                                     <!-- Title -->
                                     <h2>Получите больше функций.</h2>
@@ -646,7 +649,7 @@
                                     <!-- Content Block -->
                                     <div class="col-md-12 content-block content-block-style-3" data-lpbuilder-swiper-slide-to="1">
                                         <!-- Content Block Container -->
-                                        <div class="content-block-container text-right" style="">
+                                        <div class="content-block-container text-right">
 
                                             <!-- Icon -->
                                             <i class="fa circle-icon-block circle-icon-block-lg fa-heart" style="color: rgb(231, 76, 60); background-color: rgb(255, 255, 255); font-size: 22px;" src="assets/images/download-buttons/download-buttons-003.jpg" id="ui-id-1"></i>
@@ -664,7 +667,7 @@
                                     <!-- Content Block -->
                                     <div class="col-md-12 content-block content-block-style-3 active-swiper-slide" data-lpbuilder-swiper-slide-to="2">
                                         <!-- Content Block Container -->
-                                        <div class="content-block-container text-right" style="">
+                                        <div class="content-block-container text-right">
 
                                             <!-- Icon -->
                                             <i class="fa circle-icon-block circle-icon-block-lg fa-play" style="color: rgb(231, 76, 60); background-color: rgb(255, 255, 255); font-size: 22px;" src="assets/images/download-buttons/download-buttons-003.jpg" id="ui-id-2"></i>
@@ -682,7 +685,7 @@
                                     <!-- Content Block -->
                                     <div class="col-md-12 content-block content-block-style-3" data-lpbuilder-swiper-slide-to="3">
                                         <!-- Content Block Container -->
-                                        <div class="content-block-container text-right" style="">
+                                        <div class="content-block-container text-right">
 
                                             <!-- Icon -->
                                             <i class="fa circle-icon-block circle-icon-block-lg fa-calendar" style="color: rgb(231, 76, 60); background-color: rgb(255, 255, 255); font-size: 22px;" src="assets/images/download-buttons/download-buttons-003.jpg" id="ui-id-3"></i>
@@ -710,7 +713,7 @@
                                     <!-- Content Block -->
                                     <div class="col-md-12 content-block content-block-style-3" data-lpbuilder-swiper-slide-to="4">
                                         <!-- Content Block Container -->
-                                        <div class="content-block-container" style="">
+                                        <div class="content-block-container">
 
                                             <!-- Icon -->
                                             <i class="fa circle-icon-block circle-icon-block-lg fa-pencil" style="color: rgb(231, 76, 60); background-color: rgb(255, 255, 255); font-size: 22px;" src="assets/images/download-buttons/download-buttons-003.jpg" id="ui-id-4"></i>
@@ -728,7 +731,7 @@
                                     <!-- Content Block -->
                                     <div class="col-md-12 content-block content-block-style-3" data-lpbuilder-swiper-slide-to="5">
                                         <!-- Content Block Container -->
-                                        <div class="content-block-container" style="">
+                                        <div class="content-block-container">
 
                                             <!-- Icon -->
                                             <i class="fa circle-icon-block circle-icon-block-lg fa-laptop" style="color: rgb(231, 76, 60); background-color: rgb(255, 255, 255); font-size: 22px;" src="assets/images/download-buttons/download-buttons-003.jpg" id="ui-id-5"></i>
@@ -746,7 +749,7 @@
                                     <!-- Content Block -->
                                     <div class="col-md-12 content-block content-block-style-3" data-lpbuilder-swiper-slide-to="6">
                                         <!-- Content Block Container -->
-                                        <div class="content-block-container" style="">
+                                        <div class="content-block-container">
 
                                             <!-- Icon -->
                                             <i class="fa circle-icon-block circle-icon-block-lg fa-star" style="color: rgb(231, 76, 60); background-color: rgb(255, 255, 255); font-size: 22px;" src="assets/images/download-buttons/download-buttons-003.jpg" id="ui-id-6"></i>
@@ -1005,7 +1008,7 @@
 
                                     <li>
                                         <a href="https://1c.link/to/EIznYWM" title="VK" style="color: rgb(81, 81, 81); font-size: 0px; font-weight: 400;" target="_blank">
-                                            <span><i class="fa fa-vk" data-selector=".fa" style=""></i><span>VK</span></span>
+                                            <span><i class="fa fa-vk" data-selector=".fa"></i><span>VK</span></span>
                                         </a>
                                     </li>
                                     <li>
