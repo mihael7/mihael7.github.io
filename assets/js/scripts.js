@@ -1,4 +1,3 @@
-
 ;(function(jQuery) {
     var headerScroll,    parallaxEffect,
         blocksAtSameHeight,
@@ -631,4 +630,28 @@
 
 
 })($);
+
+/* === Always-on burger (single source of truth) REVISED === */
+(function(){
+  var $toggle = jQuery('#navToggle');
+  var $collapse = jQuery('#primary-menu');
+  var $overlay = jQuery('#menuOverlay');
+  if(!$toggle.length || !$collapse.length){ return; }
+  function closeMenu(){
+    $collapse.removeClass('open');
+    $toggle.removeClass('lpbuilder-toggle').attr('aria-expanded','false');
+    jQuery('body').removeClass('stop-scroll');
+    $overlay.removeClass('active').attr('aria-hidden','true').css('pointer-events','');
+  }
+  function openMenu(){
+    $collapse.addClass('open');
+    $toggle.addClass('lpbuilder-toggle').attr('aria-expanded','true');
+    jQuery('body').addClass('stop-scroll');
+    $overlay.addClass('active').attr('aria-hidden','false').css('pointer-events','auto');
+  }
+  $toggle.off('.alwaysBurger').on('click.alwaysBurger', function(e){ e.preventDefault(); $collapse.hasClass('open')?closeMenu():openMenu(); });
+  $collapse.find('a').off('.alwaysBurger').on('click.alwaysBurger', closeMenu);
+  $overlay.on('click.alwaysBurger', closeMenu);
+  jQuery(document).on('keydown.alwaysBurger', function(e){ if(e.key==='Escape') closeMenu(); });
+})();
 

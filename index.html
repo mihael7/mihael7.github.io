@@ -22,6 +22,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <meta name="apple-itunes-app" content="app-id=1673404704">
         <meta name="google-play-app" content="app-id=com.e1c.mobile.sport">
+        <meta name="mobile-web-app-capable" content="yes">
 
         <!-- fav and icons for Mobile
         ======================================================================== -->
@@ -127,7 +128,7 @@
                                                 </a><!-- /End Logo -->
 
                                                 <!-- Toggle Menu Button -->
-                                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                                                <button type="button" class="navbar-toggle" id="navToggle" aria-controls="primary-menu" aria-expanded="false">
                                                     Menu <span><i class="lines"></i></span>
                                                 </button><!-- /End Toggle Menu Button -->
 
@@ -135,7 +136,7 @@
 
 
                                             <!-- Navbar Collapse ( Menu ) -->
-                                            <div class="collapse navbar-collapse">
+                                            <div class="navbar-collapse" id="primary-menu">
                                                 <ul class="nav navbar-nav navbar-right">
 
                                                     <li>
@@ -194,7 +195,7 @@
                     <!-- Background Video Block -->
                     <div class="background-video-block" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 1;">
                         <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
-                            <source src="background.mp4" type="video/mp4">
+                            <source src="/assets/background.mp4" type="video/mp4">
                         </video>
                         <div class="video-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.15); z-index: 2;"></div>
                     </div><!-- /End Background Video Block -->

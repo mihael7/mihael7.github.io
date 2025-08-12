@@ -5,16 +5,21 @@ body{
     font-weight: normal;
     background-color: #ebebeb;
     font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-
     -webkit-font-smoothing: antialiased;
-     -moz-osx-font-smoothing: grayscale;
+    -moz-osx-font-smoothing: grayscale;
 }
+
+/* Always-on burger base rules (reset previous attempts) */
+.navbar-toggle { display:block !important; }
+.navbar-collapse { display:none; visibility:visible; opacity:1; }
+.navbar-collapse.open { display:block !important; }
+/* Ensure menu panel is opaque white */
+.navbar-collapse { background-color: #ffffff !important; padding-left: 20px !important; padding-right: 20px !important; }
 
 
 
 /* Prevent Scroll
 ============================================================================= */
-body.stop-scroll { overflow: hidden; }
 
 
 
@@ -701,7 +706,8 @@ p:last-of-type { margin-bottom: 0; }
     margin: 0 auto;
     overflow: hidden;
     min-height: 100vh;
-    max-width: 1600px;
+    /* Allow full width, remove fixed max-width */
+    max-width: none !important;
     position: relative;
     background-color: #ffffff;
 
@@ -709,6 +715,15 @@ p:last-of-type { margin-bottom: 0; }
        -moz-transition: all 0.50s ease-in-out;
          -o-transition: all 0.50s ease-in-out;
             transition: all 0.50s ease-in-out;
+}
+/* Full-bleed layout: remove container constraints */
+.container {
+    width: 100% !important;
+    max-width: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 auto !important;
+    margin-right: 0 auto !important;
 }
 .no-js #main-wrapper { opacity: 1; }
 
@@ -835,7 +850,8 @@ body.full-width-page #main-wrapper { max-width: 100%; }
 }
 .navbar > .container .navbar-brand,
 .navbar > .container-fluid .navbar-brand {
-    margin: 0;
+    /* Add left spacing for logo */
+    margin: 0 0 0 20px !important;
 }
 
 /* Image
@@ -1473,7 +1489,6 @@ ul.navbar-nav > li > ul.sub-menu li:first-child > a:hover { background-color: tr
 .header-style-4 .top-header { text-align: center; }
 
 /* Logo
---------------------------------------------------------- */
 /* Top Header
 ------------------------------------- */
 .header-style-4 .top-header .navbar-header {
@@ -1521,6 +1536,13 @@ ul.navbar-nav > li > ul.sub-menu li:first-child > a:hover { background-color: tr
 /* Top Header
 ----------------------------------------------------------------------------- */
 .header-style-6 .top-header { text-align: right; }
+
+/* Force right positioning on wider viewports to prevent drift */
+@media (min-width: 991px){
+    #navToggle.navbar-toggle { right:25px !important; left:auto !important; position:absolute !important; }
+    .header-menu-container { position:relative; }
+    .navbar-header { width:100%; }
+}
 
 
 /* Info Block
