@@ -50,6 +50,21 @@
         <link id="changeable-colors" rel="stylesheet" href="assets/css/css/red.css">
         <link rel="stylesheet" href="assets/css/responsive.css">
 
+        <!-- Mobile Download Links Styles -->
+        <style>
+            @media (max-width: 768px) {
+                .download-links-block a {
+                    display: block !important;
+                    margin: 10px auto !important;
+                    width: fit-content;
+                }
+                .download-links-block a img {
+                    max-width: 200px !important;
+                    height: auto !important;
+                }
+            }
+        </style>
+
 
 
 
@@ -171,9 +186,9 @@
                 </div>
             </header><!-- /End Header 1 --><!-- Hero 10
             ==================================================================== -->
-            <div class="hero-section white-section section-no-padding-bottom">
+            <div class="hero-section white-section section-no-padding-bottom" style="min-height: 100vh; height: 100vh;">
                 <!-- Section Container -->
-                <div class="section-container" style="position: relative; z-index: 10; overflow: hidden;">
+                <div class="section-container" style="position: relative; z-index: 10; overflow: hidden; height: 100%;">
 
 
                     <!-- Background Video Block -->
@@ -186,9 +201,9 @@
 
 
                     <!-- container -->
-                    <div class="container" style="position: relative; z-index: 3;">
+                    <div class="container" style="position: relative; z-index: 3; height: 100%; display: flex; align-items: center;">
                         <!-- row -->
-                        <div class="row">
+                        <div class="row" style="width: 100%;">
 
 
                             <!-- Title Block -->
@@ -205,10 +220,42 @@
                                     <!-- Line Separator -->
                                     <div class="line-separator"></div>
 
+                                    <!-- Download Links -->
+                                    <div class="download-links-block" style="margin-top: 30px;">
+                                        <a href="https://apps.apple.com/ru/app/id1673404704" title="App Store" class="btn-lpbuilder-image" onclick="ym(91530578,'reachGoal','to_store'); return true;" style="margin: 0 10px;">
+                                            <img src="assets/images/download-buttons/download-buttons-001.jpg" alt="App Store" style="border-radius: 0px; max-height: 60px;">
+                                        </a>
+                                        <a href="https://play.google.com/store/apps/details?id=com.e1c.mobile.sport" title="Google Play" class="btn-lpbuilder-image" onclick="ym(91530578,'reachGoal','to_store'); return true;" style="margin: 0 10px;">
+                                            <img src="assets/images/download-buttons/download-buttons-002.jpg" alt="Google Play" style="border-radius: 0px; max-height: 60px;">
+                                        </a>
+                                        <a href="https://www.rustore.ru/catalog/app/com.e1c.mobile.sport" title="RuStore" class="btn-lpbuilder-image" onclick="ym(91530578,'reachGoal','to_store'); return true;" style="margin: 0 10px;">
+                                            <img src="assets/images/uploads/download-buttons-003.jpg" alt="RuStore" style="border-radius: 0px; max-height: 60px;">
+                                        </a>
+                                    </div><!-- /End Download Links -->
+
                                 </div><!-- /End Title Block Container -->
                             </div><!-- /End Title Block -->
 
 
+                        </div><!-- /End row -->
+                    </div><!-- /End container -->
+
+
+                </div><!-- /End Section Container -->
+            </div><!-- /End Hero 10 -->
+
+            <!-- Spacer Section -->
+            <div class="spacer-section" style="height: 80px; background-color: transparent;"></div>
+
+            <!-- iPhone Slider Section
+            ==================================================================== -->
+            <div class="slider-section white-section">
+                <!-- Section Container -->
+                <div class="section-container">
+                    <!-- container -->
+                    <div class="container">
+                        <!-- row -->
+                        <div class="row">
                             <!-- col-md-12 -->
                             <div class="col-md-12">
                                 <!-- iPhone Slider -->
@@ -312,22 +359,17 @@
                                                     </div>
                                                 </div>
                                             </div>
-
-
-
                                         </div><!-- /End Swiper Slider -->
                                     </div><!-- /End Mobile Slider Container -->
 
                                 </div><!-- /End iPhone Slider -->
                             </div><!-- /End col-md-12 -->
-
-
                         </div><!-- /End row -->
                     </div><!-- /End container -->
-
-
                 </div><!-- /End Section Container -->
-            </div><!-- /End Hero 10 --><!-- Content 30
+            </div><!-- /End iPhone Slider Section -->
+
+            <!-- Content 30
             ==================================================================== -->
             <div id="about" class="content-section grey-section" style="outline-offset: -3px;">
                 <!-- Section Container -->
