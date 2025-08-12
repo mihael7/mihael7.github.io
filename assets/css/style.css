@@ -1,3 +1,6 @@
+#dowload .image-block {
+    padding-left: 20px;
+}
 body{
     margin: 0;
     padding: 0;
@@ -13,6 +16,31 @@ body{
 .navbar-toggle { display:block !important; }
 .navbar-collapse { display:none; visibility:visible; opacity:1; }
 .navbar-collapse.open { display:block !important; }
+/* Center align slider and advantages block vertically */
+.slider-row { display: flex; align-items: center; justify-content: center; padding-left: 20px; }
+/* Add left padding to download section */
+/* Offset the entire download section from the left edge */
+#download { padding-left: 20px !important; }
+/* Ensure the image block inside download has left spacing */
+#download .image-block { padding-left: 20px !important; }
+/* Offset the contents of image-block-container within download section */
+#download .image-block-container {
+    margin-left: 20px !important;
+}
+/* Stack slider, advantages and download sections below on small screens */
+@media (max-width: 767px) {
+    .slider-row,
+    #download .row {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+    }
+    .advantages,
+    #download .content-block-container {
+        width: 100%;
+        padding-top: 20px;
+    }
+}
 /* Ensure menu panel is opaque white */
 .navbar-collapse { background-color: #ffffff !important; padding-left: 20px !important; padding-right: 20px !important; }
 
@@ -811,6 +839,10 @@ body.full-width-page #main-wrapper { max-width: 100%; }
     display: block;
     position: relative;
     background: url("../images/hero/head.jpg") 50% top no-repeat #fefefe;
+}
+/* Make header-section-1 background uniformly white */
+#header-section-1 .header-menu {
+    background: #ffffff !important;
 }
 
 
